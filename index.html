@@ -319,7 +319,13 @@
       </div>
       <div class="actions">
         <button class="btn btn-primary" id="btn-guardar-pronostico">Guardar Pronóstico</button>
+        <button class="btn" id="btn-analizar-historico" style="margin-left: 1rem;">Analizar Historial</button>
         <span class="form-msg" id="reg-msg"></span>
+      </div>
+
+      <div id="reg-analisis-historico" class="card" style="margin-top: 1.5rem; display: none; background: var(--c-surface-alt);">
+        <h3 class="card-title" style="margin-bottom: 1rem;">Análisis Histórico de los Pronósticos</h3>
+        <div id="reg-analisis-resultados" class="grid grid-3"></div>
       </div>
     </div>
     
@@ -334,6 +340,7 @@
               <th>Gemini</th>
               <th>ChatGPT</th>
               <th>Claude</th>
+              <th>Análisis Histórico</th>
               <th>Resultado Final</th>
             </tr>
           </thead>
@@ -353,6 +360,14 @@
     favorable entre la probabilidad estimada y la cuota, no un resultado asegurado.
   </p>
 </footer>
+
+<div id="fallos-modal" class="modal-overlay">
+  <div class="modal-content">
+    <button class="modal-close" onclick="document.getElementById('fallos-modal').classList.remove('active')">&times;</button>
+    <h3 id="fallos-modal-title" class="modal-title">Detalles de Fallos</h3>
+    <div id="fallos-modal-body"></div>
+  </div>
+</div>
 
 <script src="js/modelo.js"></script>
 <script src="js/reglas.js"></script>
